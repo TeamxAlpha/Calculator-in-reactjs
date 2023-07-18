@@ -1,50 +1,52 @@
 
 
+// Counter that count incremenet & decrement in separately from buttons components. 
+
+import { useState } from 'react';
+
+export default function MyApp() {
+  return (
+    <div>
+      <h1>Counter </h1>
+      <MyButton />
+      <MyButton1 />
+    </div>
+  );
+}
+
+function MyButton() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
 
 
-// import { useState } from 'react';
+function MyButton1() {
+  const [count, setCount] = useState(0);
 
-// export default function MyApp() {
-//   return (
-//     <div>
-//       <h1>Counter </h1>
-//       <MyButton />
-//       <MyButton1 />
-//     </div>
-//   );
-// }
+  function handleClick() {
+    if (count >= 0 ){
+    setCount(count - 1);
+  }
+}
 
-// function MyButton() {
-//   const [count, setCount] = useState(0);
-
-//   function handleClick() {
-//     setCount(count + 1);
-//   }
-
-//   return (
-//     <button onClick={handleClick}>
-//       Clicked {count} times
-//     </button>
-//   );
-// }
+  return (
+    <button onClick={handleClick}>
+      Clicked {count} times
+    </button>
+  );
+}
 
 
-// function MyButton1() {
-//   const [count, setCount] = useState(0);
-
-//   function handleClick() {
-//     if (count >= 0 ){
-//     setCount(count - 1);
-//   }
-// }
-
-//   return (
-//     <button onClick={handleClick}>
-//       Clicked {count} times
-//     </button>
-//   );
-// }
-
+// Counter that update a Single screen display using increment and decrement and reset the count.
 
 import {useState} from 'react';
 
